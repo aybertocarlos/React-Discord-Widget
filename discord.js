@@ -15,7 +15,6 @@ class discordWidget extends React.Component {
     axios.get('https://discordapp.com/api/guilds/223597502958534656/widget.json')
       .then(resp => {
         this.setState({ data: resp.data })
-        console.log(this.state.data)
       })
   }
 
