@@ -23,6 +23,7 @@ class discordWidget extends React.Component {
     var members
     var link
     var sname
+    var mlength
     if (this.state.data !== null) {
       channels = this.state.data.channels.map(channel => {
         return e(
@@ -73,11 +74,12 @@ class discordWidget extends React.Component {
         e('span', '', 'Yandaki butona basarak sunucuya katıl.'),
         e('a', { className: 'dc-rounded dc-shadow', href: this.state.data.instant_invite }, 'Katıl'))
       sname = this.state.data.name
+      mlength = this.state.data.members.length
     }
 
     var header = e('h1', { className: 'dc-main-header dc-rounded dc-shadow' }, sname + ' Discord')
     var header1 = e('h1', { className: 'dc-header' }, 'Kanallar')
-    var header2 = e('h1', { className: 'dc-header' }, 'Çevrimiçi Üyeler')
+    var header2 = e('h1', { className: 'dc-header' }, 'Çevrimiçi Üyeler - ' + mlength)
     var credit = e('span', { className: 'dc-credit' }, 'aybertocarlos')
 
     return (
